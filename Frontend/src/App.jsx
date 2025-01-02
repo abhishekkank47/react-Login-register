@@ -11,6 +11,7 @@ import ResetPassword from './Pages/ResetPassword'
 import VerifyEmail from './Pages/VerifyEmail'
 import PageNotFound from './Pages/PageNotFound'
 import Dashboard from './Pages/Dashboard'
+import UserChangeOldPassword from './Pages/UserChangeOldPassword'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
         <Route path='/reset-password' element={<ResetPassword/>}/>
+        <Route path='/change-old-password' element={<UserChangeOldPassword/>}/>
         <Route path='/verify-email' element={<VerifyEmail/>}/>
         <Route path='/not-found' element={<PageNotFound/>}/>
         <Route path='/dashboard' element={<Dashboard/>}/>
