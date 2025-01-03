@@ -6,9 +6,12 @@ import { RotatingLines } from "react-loader-spinner"; // Assuming you are using 
 
 
 const Register = () => {
-  const [name, setName] = useState("");
+  const [ firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(""); // Added error state
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -32,22 +35,35 @@ const Register = () => {
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-[#C7C5F4] to-[#776BCC]">
       <div className="relative bg-gradient-to-r from-[#5D54A4] to-[#7C78B8] w-full max-w-[400px] h-[500px] shadow-[0px_0px_24px_#5C5696] overflow-hidden">
         <div className="z-10 relative h-full px-8">
-          <h2 className="pt-[30px] pb-[50px] text-center text-[#30008b] text-2xl font-bold">Create Account</h2>
+          <h2 className="pt-[20px] pb-[10px] text-center text-[#30008b] text-2xl font-bold">Create Account</h2>
           
           <form onSubmit={handleSignUp} className="w-full text-center">
-            <div className="relative mb-6">
+       
+            <div className="relative mb-4">
               <FaUser className="absolute top-3 left-3 text-gray-400" />
               <input
                 type="text"
-                placeholder="Full Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                placeholder="First Name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
                 required
-                className="w-full px-10 py-3 bg-transparent border-b-2 border-gray-300 focus:border-purple-500 text-gray-700 font-medium placeholder-gray-400 focus:outline-none"
+                className="w-full px-10 py-2 bg-transparent border-b-2 border-gray-300 focus:border-purple-500 text-gray-700 font-medium placeholder-gray-400 focus:outline-none"
+              />
+            </div>
+
+            <div className="relative mb-4">
+              <FaUser className="absolute top-3 left-3 text-gray-400" />
+              <input
+                type="text"
+                placeholder="Last Name"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+                required
+                className="w-full px-10 py-2 bg-transparent border-b-2 border-gray-300 focus:border-purple-500 text-gray-700 font-medium placeholder-gray-400 focus:outline-none"
               />
             </div>
             
-            <div className="relative mb-6">
+            <div className="relative mb-4">
               <FaEnvelope className="absolute top-3 left-3 text-gray-400" />
               <input
                 type="email"
@@ -55,11 +71,23 @@ const Register = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-10 py-3 bg-transparent border-b-2 border-gray-300 focus:border-purple-500 text-gray-700 font-medium placeholder-gray-400 focus:outline-none"
+                className="w-full px-10 py-2 bg-transparent border-b-2 border-gray-300 focus:border-purple-500 text-gray-700 font-medium placeholder-gray-400 focus:outline-none"
               />
             </div>
 
-            <div className="relative mb-6">
+            <div className="relative mb-4">
+              <FaEnvelope className="absolute top-3 left-3 text-gray-400" />
+              <input
+                type="number"
+                placeholder="Mobile Number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+                className="w-full px-10 py-2 bg-transparent border-b-2 border-gray-300 focus:border-purple-500 text-gray-700 font-medium placeholder-gray-400 focus:outline-none"
+              />
+            </div>
+
+            <div className="relative mb-4">
               <FaLock className="absolute top-3 left-3 text-gray-400" />
               <input
                 type="password"
@@ -67,7 +95,19 @@ const Register = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full px-10 py-3 bg-transparent border-b-2 border-gray-300 focus:border-purple-500 text-gray-700 font-medium placeholder-gray-400 focus:outline-none"
+                className="w-full px-10 py-2 bg-transparent border-b-2 border-gray-300 focus:border-purple-500 text-gray-700 font-medium placeholder-gray-400 focus:outline-none"
+              />
+            </div>
+
+            <div className="relative mb-4">
+              <FaLock className="absolute top-3 left-3 text-gray-400" />
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+                className="w-full px-10 py-2 bg-transparent border-b-2 border-gray-300 focus:border-purple-500 text-gray-700 font-medium placeholder-gray-400 focus:outline-none"
               />
             </div>
 
