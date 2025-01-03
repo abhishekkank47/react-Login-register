@@ -50,7 +50,7 @@ const ForgotPassword = () => {
           <h2 className="pt-[80px] pb-[50px] text-center text-[#30008b] text-2xl font-bold">
             Forget Password
           </h2>
-          
+
           {!isSubmitted ? (
             <form onSubmit={handleSubmit} className="w-full text-center">
               <div className="relative mb-6">
